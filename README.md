@@ -11,7 +11,7 @@ Yazılım Mühendisliği Güncel Konuları dersin kapsamında yaptığımız bul
   - Download, upload ve delete.
  
 # Proje Videosu
-[![Everything Is AWESOME](https://img.youtube.com/vi/flsLczYCgoE/0.jpg)](https://www.youtube.com/watch?v=flsLczYCgoE)
+[![Everything Is AWESOME](https://img.youtube.com/vi/flsLczYCgoE/0.jpg)](https://youtu.be/ZdImLXfy-0g)
 
 ## Proje Üyeleri
 * [İbrahim ALTIKAT](https://github.com/ialtikat)

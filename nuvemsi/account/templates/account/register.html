@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Register{% endblock title%}
+{% block account %}
+  <main>
+    <div class="container">
+
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+              <div class="d-flex justify-content-center py-4">
+                <a href="index.html" class="logo d-flex align-items-center w-auto">
+                  <img src="{% static 'img/logo.png' %}" alt="Güvenli Bulut Depolama">
+                  <span class="d-none d-lg-block">Nuvemsi</span>
+                </a>
+              </div><!-- End Logo -->
+
+              <div class="card mb-3">
+
+                <div class="card-body">
+
+                  <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">Bir hesap oluştur.</h5>
+                    <p class="text-center small">Hesap oluşturmak için kişisel bilgilerinizi giriniz.</p>
+                  </div>
+
+                  <form class="row g-3 needs-validation" method="POST">
+                    {% csrf_token %}
+                    {% if error %}
+                      <div class="alert alert-danger">
+                          {{error}}
+                      </div>                    
+                    {% endif %}
+                    <div class="col-12">
+                      <label for="yourName" class="form-label">Kullanıcı Adı</label>
+                      <input type="text" name="username" class="form-control" id="yourName" value="{{username}}" required>
+                      <div class="invalid-feedback">Lütfen adınızı giriniz!</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="yourName" class="form-label">Ad</label>
+                      <input type="text" name="firstname" class="form-control" id="yourName" value="{{firstname}}"   required>
+                      <div class="invalid-feedback">Lütfen adınızı giriniz!</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="yourName" class="form-label">Soyad</label>
+                      <input type="text" name="lastname" class="form-control" id="yourName"  value="{{lastname}}" required>
+                      <div class="invalid-feedback">Lütfen adınızı giriniz!</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourEmail" class="form-label">Mail</label>
+                      <input type="email" name="email" class="form-control" id="yourEmail" value="{{email}}"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="user@example.com" required>
+                      <div class="invalid-feedback">Lütfen geçerli bir mail adresi giriniz!</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="yourEmail" class="form-label">Telefon</label>
+                      <input type="text" class="form-control" name="phone" id="phone" pattern="[0-9]{11}"  value="{{phone}}" maxlength="11" placeholder="0555-555-5555" required>
+                      <div class="invalid-feedback">Lütfen geçerli bir telefon numarası giriniz!</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="yourPassword" class="form-label">Parola</label>
+                      <input type="password" name="password" class="form-control" id="yourPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="En az bir sayı, bir büyük ve küçük harf ve en az 8 veya daha fazla karakter içermelidir" required>
+                      <div class="invalid-feedback">Lütfen şifrenizi giriniz!</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="yourPassword" class="form-label">Parolayı Doğrula</label>
+                      <input type="password" name="repassword" class="form-control" id="yourPassword" required>
+                      
+                      <div class="invalid-feedback">Lütfen şifrenizi giriniz!</div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
+                        <label class="form-check-label" for="acceptTerms">Katılıyorum ve kabul ediyorum. |<a href="#">Şartlar ve koşullar.</a></label>
+                        <div class="invalid-feedback">Göndermeden önce kabul etmelisiniz.</div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-primary w-100" type="submit" value="Hesap Oluştur">Hesabı Oluştur</button>
+                    </div>
+                    <div class="col-12">
+                      <p class="small mb-0">Zaten hesabınız var mı? <a href="{% url 'login' %}">Giriş Yap</a></p>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+
+              <div class="credits">
+                Designed by <a href="http://webbizden.com/">Webbizden</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main><!-- End #main -->
+  {% endblock account %}

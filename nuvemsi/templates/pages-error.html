@@ -1,0 +1,21 @@
+{% extends 'basemain.html' %}
+{% load static %}
+{% block title %}Error!!!{% endblock title%}
+{% block main %}
+
+  <main>
+    <div class="container">
+
+      <section class="section error-404 min-vh-100 d-flex flex-column align-items-center justify-content-center">
+        <h1>OPPSS !!!</h1>
+        <h2>Bir sorun ile karşılaşıldı!!!.</h2>
+        <a class="btn" href="{% url 'home' %}">Ana Sayfaya Dön</a>
+        <img src="{% static 'img/not-found.svg' %}" class="img-fluid py-5" alt="Page Not Found">
+        <div class="credits">
+          Designed by <a href="http://webbizden.com/">Webbizden</a>
+        </div>
+      </section>
+
+    </div>
+  </main><!-- End #main -->
+{% endblock main %}

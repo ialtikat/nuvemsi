@@ -9,6 +9,7 @@ Yazılım Mühendisliği Güncel Konuları dersin kapsamında yaptığımız bul
   - Resim dosyası güvenli depolama.
   - PDF dosyası güvenli depolama.
   - Download, upload ve delete.
+  - Base64 Decode ve Encode
  
 # Proje Videosu
 [![Everything Is AWESOME](https://img.youtube.com/vi/flsLczYCgoE/0.jpg)](https://youtu.be/ZdImLXfy-0g)

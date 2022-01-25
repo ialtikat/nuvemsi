@@ -1,0 +1,98 @@
+{% extends 'basemain.html' %}
+{% load static %}
+{% block title %}Döküman Yükleme{% endblock title%}
+{% block main %}
+<aside id="sidebar" class="sidebar">
+
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{% url 'home' %}">
+        <i class="bi bi-house-fill"></i>
+        <span>Ana Sayfa</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+    
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{% url 'doclist' %}">
+        <i class="bi bi-menu-button-wide"></i>
+          <span>Dökümanlar</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{% url 'uploadimg' %}">
+        <i class="bi bi-menu-button-wide"></i>
+          <span>Resim Yükle</span>
+      </a>
+    </li><!-- End Components Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link " data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-journal-text"></i><span>Dökmantasyon</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'uploaddoc' %}">
+            <i class="bi bi-circle"></i><span>Döküman Yükle</span>
+          </a>
+        </li>
+        <li>
+          <a href="forms-layouts.html">
+            <i class="bi bi-circle"></i><span>Word</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="nav-heading">Ayarlar</li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="users-profile.html">
+        <i class="bi bi-person"></i>
+        <span>Profile</span>
+      </a>
+    </li><!-- End Profile Page Nav -->
+  </ul>
+
+</aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+    <!--Yükle-->
+    <section class="section">
+        <div class="row">
+          <form class="row g-3 needs-validation" method="POST" enctype="multipart/form-data" novalidate >
+            {% csrf_token %}
+            <div class="col-12">
+            <div class="card text-center">
+              <div class="card-header">
+                Döküman Yükle (PDF, txt formatında olmalı)
+              </div>
+              </div>
+            </div>
+              {% comment %} {% if error %}
+                <div class="alert alert-danger">
+                    {{error}}
+                </div>                    
+              {% endif %} {% endcomment %}
+              {% if success %}
+                  <div class="alert alert-success">
+                    {{success}}
+                  </div>
+              {% endif %}
+            <div class="col-12">
+              <label for="passwd" class="form-label">Döküman Seçiniz</label>
+              <input type="file" class="custom-file-input form-control" name="upload" accept=".pdf, .txt" id="inputGroupFile01" required>
+            </div>
+            <div class="col-12">
+              <div class="text-center">
+              <button type="submit" class="btn btn-success">Yükle</button>
+            </div>
+          </div>
+          </form>
+        </div>
+    </section>
+        
+
+  </main><!-- End #main -->
+{% endblock main %}

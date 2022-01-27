@@ -1,4 +1,4 @@
-## Bulut Tabanlı Güvenli Depolama Sistemi | Django(Python)
+## Bulut Tabanlı Güvenli Depolama Sistemi | Django (Python)
 
 [![N|Nuvemsi](https://cdn.pixabay.com/photo/2018/11/28/10/45/cloud-3843352_960_720.jpg)](http://www.kriptarium.com/ymgk.html)
 
